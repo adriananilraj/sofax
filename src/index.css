@@ -1,0 +1,116 @@
+@import './css/font/alkatra.css';
+
+:root {
+  --primary-color: #da9e29;
+  --secondary-color: #491d27;
+  --text-light: #828282;
+  --color-white: #fff;
+  --black-bg: #141515;
+}
+
+.d-block {
+  display: block;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.left-wrapper {
+  background-color: #fff;
+  width: 100%;
+}
+
+.right-wrapper {
+  background-color: #141515;
+  width: 100%;
+}
+
+.content {
+    display: flex;
+    text-align: center;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.title.dark {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.title-dark-bold {
+    font-weight: 700;
+    color: var(--secondary-color);
+    line-height: 3rem;
+    font-size: 2em;
+}
+.title-light-bold {
+    font-weight: 700;
+    color: var(--color-white);
+    line-height: 3rem;
+    font-size: 2em;
+}
+
+.title-light {
+    font-weight: 300;
+    color: var(--text-light);
+    letter-spacing: 3px;
+    font-size: 12px;
+    margin: 0;
+}
+
+.my-10 {
+  margin: 10px 0;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+.mt-25 {
+  margin-top: 25px;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+
+.card-bg {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.c-input {
+  padding: 10px 15px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 20px;
+}
+
+.c-input:focus {
+  outline: none;
+}
+
+
+@media only screen and (max-width: 997px) {
+  .wrapper {
+    flex-wrap: wrap;
+  }
+}

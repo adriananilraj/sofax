@@ -1,0 +1,40 @@
+/* .wrapper {
+    background-color: var(--black-bg);
+} */
+
+
+.card {
+    /* border: 1px solid #000; */
+    padding: 20px;
+    width: 1000px;
+    max-width: 100%;
+    margin: 40px;
+    font-family: 'Alkatra', cursive;
+}
+
+.card-title {
+    font-size: 1.5em;
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+.tabs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.tab-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tab {
+    width: 75px;
+}
+
+.tab-group h4 {
+    margin-left: 15px;
+}
