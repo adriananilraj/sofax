@@ -2,7 +2,7 @@
 Need a house designer for your next dream house?
 
 
-Install packages and dependency before launching 
+Git clone and install packages and dependency before launching 
 > npm install
 
 > npm run dev
