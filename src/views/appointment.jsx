@@ -73,7 +73,7 @@ export default function appointment() {
               <h4>Fill in Personal Details</h4>
             </div>
           </div>
-          <div className="mt-50">
+          <div className="mt-50 general-container">
             {
               currPage == 1 ? <GeneralInfo onDataReceived={(data, action) => {nextPage(data, action);}}/> : ''
             }

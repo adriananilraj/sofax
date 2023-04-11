@@ -1,5 +1,3 @@
-import '../css/generalInfo/generalinfo.css'
-
 import React, { useRef, useState } from 'react';
 
 import Bold1 from '../assets/svg/bold1.svg';
@@ -100,38 +98,40 @@ function GeneralInfo(props) {
 
         doctors.map((d,i) => {
             GetDoctorElement.push(
-                <div key={i}
-                onClick={() => {handleDoctorSelect(d)}}
-                // className={`cardDoctor card-bg`}
-                className={ (currDoctor == d.name && d.availability == 1) ? 'cardDoctor card-bg active' : '' || d.availability == 0 ? 'disabled cardDoctor card-bg' : ' '  + `cardDoctor card-bg`} 
-                >
-                <div className="card-header">
-                    <img width={'45%'} src={d.img}/>
-                    <div>
-                        <span>{d.name}</span>
+                <div className='col-3'>
+                    <div key={i}
+                    onClick={() => {handleDoctorSelect(d)}}
+                    // className={`cardDoctor card-bg`}
+                    className={ (currDoctor == d.name && d.availability == 1) ? 'cardDoctor card-bg active' : '' || d.availability == 0 ? 'disabled cardDoctor card-bg' : ' '  + `cardDoctor card-bg`} 
+                    >
+                    <div className="card-header">
+                        <img width={'45%'} src={d.img}/>
                         <div>
-                            {
-                                <Stars count={d.rating}/>
-                            }
+                            <span>{d.name}</span>
+                            <div>
+                                {
+                                    <Stars count={d.rating}/>
+                                }
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="card-body">
-                    <div className="desc">
-                    {d.desc}
+                    <div className="card-body">
+                        <div className="desc">
+                        {d.desc}
+                        </div>
+                        <div className="w-desc">
+                            <p>Available From: <span>{d.available_from}</span></p>
+                            <p>Working Hours: <span>{d.working_hours}</span></p>
+                        </div>
                     </div>
-                    <div className="w-desc">
-                        <p>Available From: <span>{d.available_from}</span></p>
-                        <p>Working Hours: <span>{d.working_hours}</span></p>
+                    <div className="card-footer">
+                        <div style={{display:'flex', alignItems: 'center'}}>
+                            <input  type="radio" checked={currDoctor == d.name && d.availability == 1} id={d.name} name={"choice"} onChange={(e) => {handleOnChange(e)}} value={d.name}/>
+                            <label style={{paddingLeft:'10px'}} htmlFor={d.name}>Choose</label>
+                        </div>
+                        <div>&#8594;View Profile</div>
                     </div>
-                </div>
-                <div className="card-footer">
-                    <div style={{display:'flex', alignItems: 'center'}}>
-                        <input  type="radio" checked={currDoctor == d.name && d.availability == 1} id={d.name} name={"choice"} onChange={(e) => {handleOnChange(e)}} value={d.name}/>
-                        <label style={{paddingLeft:'10px'}} htmlFor={d.name}>Choose</label>
                     </div>
-                    <div>&#8594;View Profile</div>
-                </div>
                 </div>
             )
         })
@@ -144,7 +144,7 @@ function GeneralInfo(props) {
             img: HouseDesigner1,
             rating: 5,
             availability: 1,
-            available_from: '10 Febuary 2019',
+            available_from: '2023-03-25',
             desc: 'A house designer should be highly creative, with the ability to envision unique...',
             working_hours: '9 am - 6 pm',
         },
@@ -153,7 +153,7 @@ function GeneralInfo(props) {
             img: HouseDesigner2,
             rating: 3,
             availability: 0,
-            available_from: '25 May 2022',
+            available_from: '2023-05-01',
             desc: 'A house designer should be highly creative, with the ability to envision unique...',
             working_hours: '9 am - 6 pm',
         },
@@ -162,7 +162,7 @@ function GeneralInfo(props) {
             img: HouseDesigner3,
             rating: 5,
             availability: 1,
-            available_from: '4 August 2015',
+            available_from: '2023-04-09',
             desc: 'A house designer should be highly creative, with the ability to envision unique...',
             working_hours: '9 am - 6 pm',
         },
@@ -178,7 +178,7 @@ function GeneralInfo(props) {
         <div>
             <form onSubmit={handleSubmit(onSubmit
                 )}>
-                    <div className='mt-50'>
+                    <div className='mt-50 general-container'>
                         <div className='form-title'>Have you booked an appointment for a house designer before?</div>
                         <div className="input-box">
                             <div className="w-50">
@@ -197,11 +197,13 @@ function GeneralInfo(props) {
                         <div className='form-title'>What's the reason for your visit?</div>
                         <div className="designer-box">
                             { types.map((t, i) => (
-                                <div key={i} onClick={(e) => {handleStyleSelect(t)}} 
-                                className={ (currHouseStyle == t.name && t.disable == false) ? 'desginer-group active' : '' || t.disable == true ? 'disabled desginer-group' : ' '  + `desginer-group`} 
-                                id={t.name}>
-                                <img width={'50px'} src={t.img}/>
-                                <div className='text'>{t.display}</div>
+                                <div className='col-3'>
+                                    <div key={i} onClick={(e) => {handleStyleSelect(t)}} 
+                                    className={ (currHouseStyle == t.name && t.disable == false) ? 'desginer-group active' : '' || t.disable == true ? 'disabled desginer-group' : ' '  + `desginer-group`} 
+                                    id={t.name}>
+                                    <img width={'50px'} src={t.img}/>
+                                    <div className='text'>{t.display}</div>
+                                </div>
                         </div>
                             ))}
                         </div>
