@@ -212,6 +212,10 @@
 
 /* Calendar */
 
+.react-datepicker__tab-loop {
+    position: absolute;
+}
+
 .react-datepicker-popper {
     position: relative !important;
     transform: translate(0px, 0px) !important;
